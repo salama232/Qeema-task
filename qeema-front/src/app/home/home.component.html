@@ -1,0 +1,22 @@
+﻿<div class="card mt-4">
+    <h4 class="card-header">Dashboard</h4>
+    <div class="card-header" *ngIf="users">Number of Registration is {{users.length}}</div>
+    <div class="card-header" *ngIf="userslog">Number of Login User is {{ userslog.length || 0 }}</div>
+    <div class="card-body">
+        <h6>Registration</h6>
+        
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="users">
+            <li  *ngFor="let user of users">{{user.username}}</li>
+        </ul>
+        
+    </div>
+    <div class="card-body">
+        <h6>Login</h6>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="userslog">
+            <li *ngFor="let userlog of userslog">{{userlog.email}}</li>
+        </ul>
+    </div>
+  
+</div>
